@@ -1,20 +1,58 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+  <h1>Calculadora e Exercicios</h1>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-input color="Danger" label="Primeiro número" labelPlacement="floating" placeholder="Digite um número"
+      type="number" [(ngModel)]="n1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Segundo número" labelPlacement="floating" placeholder="Digite outro número" type="number"
+      [(ngModel)]="n2">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </ion-input>
+  </ion-item>
+  <div class="gap">
+    <ion-button color="warning" (click)="somar()">Somar</ion-button>
+    <ion-button color="primary" (click)="subtrair()">Subtração</ion-button>
+    <ion-button color="tertiary" (click)="multiplicar()">Multiplicação</ion-button>
+    <ion-button color="danger" (click)="dividir()">Divisão</ion-button>
   </div>
+  <br>
+  <ion-label class="result">Resultado Final = <strong>{{res}}</strong></ion-label>
+
+  <h1>Exercicio 1</h1>
+  <ion-item>
+    <ion-input label="Valor da doação" labelPlacement="floating" placeholder="Em dólares (US$)"
+      [(ngModel)]="valorDoacao">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Valor do dólar" labelPlacement="floating" placeholder="cotação do dólar em R$"
+      [(ngModel)]="valorDolar">
+    </ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="converter()">Converter
+  </ion-button>
+  <ion-label>R${{valorReais}}</ion-label>
+
+  <h1>Exercicio 2</h1>
+  <ion-item>
+    <ion-input label="Nota da AC" labelPlacement="floating" placeholder="AC" [(ngModel)]="ac">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Nota AG" labelPlacement="floating" placeholder="AG" [(ngModel)]="ag">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Nota AT" labelPlacement="floating" placeholder="AT" [(ngModel)]="at">
+    </ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="calcularMedia()">Converter
+  </ion-button>
+  <ion-label>Média: {{media}}</ion-label>
+
+</ion-content>
+
 </ion-content>
